@@ -63,7 +63,7 @@ def txtOperation(fileList, command):
             ensures that the new file always has a unique filename, so as to not overwrite any pre-existing files
             """
             fileEnd1 = str(fileEnd)
-            fileName = ("combinded" + fileEnd1 + ".txt")
+            fileName = ("combined" + fileEnd1 + ".txt")
             try:
                 with open(fileName) as f:
                     fileEnd += 1
