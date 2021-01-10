@@ -65,6 +65,20 @@ def txtWorker(fileList):
 
     return(faulty)
 
+def fileNameGen(name, end):
+
+    fileEnd = 0
+    while True:
+        fileEnd1 = str(fileEnd)
+        fileName = (name + fileEnd1 + end)
+        try:
+            with open(fileName) as f:
+                fileEnd += 1
+        except IOError:
+            break
+
+    return(fileName)
+
 def txtOperation(fileList, command):
     """
     in this function, all operations related to editing the provided files will go down
@@ -72,18 +86,8 @@ def txtOperation(fileList, command):
 
     if command == "-c":
 
-        fileEnd = 0
-        while True:
-            """
-            ensures that the new file always has a unique filename, so as to not overwrite any pre-existing files
-            """
-            fileEnd1 = str(fileEnd)
-            fileName = ("combined" + fileEnd1 + ".txt")
-            try:
-                with open(fileName) as f:
-                    fileEnd += 1
-            except IOError:
-                break
+        fileName = ""
+        fileName = fileNameGen("combined", ".txt")
 
         newFile = open(fileName, "a+")
 
