@@ -18,7 +18,7 @@ if any1 == "y":
         text = ("full file name and extension of file ")
         fileName = input(text)
         commandsList.append(fileName)
-        any2 = input("any more supplimentary files? (y/n) ")
+        any2 = input("any more supplementary files? (y/n) ")
         if any2 != "y":
             break
 
