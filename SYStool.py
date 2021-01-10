@@ -15,6 +15,21 @@ current task:
 typeList = ['-txt']     # -txt prepares program to work with txts, vice versa for -sql
 flagList = ['-c', '-v']     # -c combines files, -v will validate files
 
+def help():
+    message = """
+Help for SYStool.py:
+
+all commands must be formatted in form: python SYStool.py -fileExtension -actionflag file.fileExtension
+example: python SYStool.py -txt -c file.txt file1.txt
+supported file extension flags: -txt
+supported action flags: -c, -v
+
+-c: combines two files together into one, inherits file extension from flag
+
+-v: validates that all provided files are accessible, as long as they have the same file extension as the first flag
+"""
+    print(message)
+
 def txtWorker(fileList):
     """
     this function serves to ensure all files provided are operable
@@ -94,7 +109,6 @@ def txtOperation(fileList, command):
     else:
         print("finished!")
 
-
 def txtGO(faulty, fileList):
 
     if faulty[0] == 0:
@@ -105,19 +119,22 @@ def txtGO(faulty, fileList):
         print("you have:", num,"faulty file(s). please check these and restart program")
 
 fileList = []
-if len(sys.argv) > 3: #ensures arguments for filetype, operation, and at least one file is provided
+if sys.argv[1] != "-h":
+    if len(sys.argv) > 3: #ensures arguments for filetype, operation, and at least one file is provided
 
-    if sys.argv[1] in typeList:
-        fileType = sys.argv[1]
-        fileList = sys.argv[3:]     #creates new list of filenames only
-        if sys.argv[2] in flagList:
-            faulty = txtWorker(fileList)         #runs functio nwhich validates the files (runs by default independent of flags
-            txtGO(faulty, fileList)
-            txtOperation(fileList, sys.argv[2])
+        if sys.argv[1] in typeList:
+            fileType = sys.argv[1]
+            fileList = sys.argv[3:]     #creates new list of filenames only
+            if sys.argv[2] in flagList:
+                faulty = txtWorker(fileList)         #runs functio nwhich validates the files (runs by default independent of flags
+                txtGO(faulty, fileList)
+                txtOperation(fileList, sys.argv[2])
+            else:
+                print("No function arguments provided!")
         else:
-            print("No function arguments provided!")
-    else:
-        print("No filetype arguments provided!")
+            print("No filetype arguments provided!")
 
+    else:
+        print("Invalid input. must be in form: python SYScat.py (file flag) (action flag) (files)")
 else:
-    print("Invalid input. must be in form: python SYStool.py (file flag) (action flag) (files)")
+    help()
