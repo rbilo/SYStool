@@ -120,4 +120,4 @@ if len(sys.argv) > 3: #ensures arguments for filetype, operation, and at least o
         print("No filetype arguments provided!")
 
 else:
-    print("Invalid input. must be in form: python SYScat.py (file flag) (action flag) (files)")
+    print("Invalid input. must be in form: python SYStool.py (file flag) (action flag) (files)")
