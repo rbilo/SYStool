@@ -1,5 +1,0 @@
-'Harold', 53, 'Macedonia', 43000.00
-'Ruslan', 18, 'Ukraine', 32000.00
-'Chad', 69, 'California', 42000.00
-'Joseph', 40, 'Maryland', 35000.00
-'Yvonne', 32, 'Singapore', 53500.00
