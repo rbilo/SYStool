@@ -2,7 +2,7 @@
 command line python script which allows for some basic txt and sql operations, without using argparse for arguments.
 
 !!!IMPORTANT!!!
-SQLTESTER.PY, VALUES.TXT, TEST.DB ARE ALL TEST FILES, AND ARE NOT TO BE USED FOR GENERAL PURPOSE DUE TO THEIR ROUGH AND UNPOLISHED NATURE!
+SQLTESTING.PY, VALUES.TXT, TEST.DB ARE ALL TEST FILES, AND ARE NOT TO BE USED FOR GENERAL PURPOSE DUE TO THEIR ROUGH AND UNPOLISHED NATURE!
 
 The purpose of this project was to write a small command line tool which can combine txts, manipulate dbs and convert the SQL data to txt and vice versa.
 as of current, this tool can only combine two txts together.
