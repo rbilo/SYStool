@@ -271,6 +271,12 @@ def dbTypeVerify(fileList):
 #this huge if tree is the reason you use argparse when parsing command line arguments
 #yes this is a huge mess, but it works the time being :|
 
+"""
+TODO for this part of the code:
+
+some form of logic tree which utilises parent and children system for progressing through parsing the arguments
+staring at all these if statements hurts my soul
+"""
 fileList = []
 if sys.argv[1] != "-h":
     if len(sys.argv) > 3: #ensures arguments for filetype, operation, and at least one file is provided
