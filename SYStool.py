@@ -102,11 +102,6 @@ def txtOperation(fileList, command):
 
         print("files combined! filename:", fileName)
         newFile.close()
-        printChoice = input("would you like to see the file contents? (y/n) ")
-        if printChoice == "y":
-            with open(fileName, "r") as file:
-                temp = file.read().rstrip('\n')
-                print(temp)
 
         print("Finished!")
 
