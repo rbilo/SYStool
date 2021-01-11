@@ -12,7 +12,7 @@ import sys
 current task:
 """
 
-typeList = ['-txt']     # -txt prepares program to work with txts, vice versa for -sql
+typeList = ['-txt']     # -txt prepares program to work with txts, -db for databases
 flagList = ['-c', '-v']     # -c combines files, -v will validate files
 
 def help():
