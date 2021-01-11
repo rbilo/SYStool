@@ -4,21 +4,17 @@ def listToString(list):
     str1 = " "
     return (str1.join(list))
 
+conn = sqlite3.connect("test.db")
+cursor = conn.cursor()
+
 conn =  sqlite3.connect("test.db")
 print("opened database successfully")
-
-cursor = conn.cursor()
-cursor.execute("SELECT * FROM COMPANY")
-results = cursor.fetchall()
-minID = (len(results))
-minID += 1
 
 cursor = conn.execute("SELECT name FROM sqlite_master WHERE type='table';")
 tables = [
     v[0] for v in cursor.fetchall()
     if v[0] != "sqlite_sequence"
     ]
-print(tables)
 
 if len(tables) < 2:
     tables = listToString(tables)
@@ -44,38 +40,41 @@ else:
 
     choice -= 1
     tables = tables[choice]
+
+tableTemp = listToString(tables)
+tables = tableTemp.replace(" ", "")
     
 file = open('values.txt', 'r')
 
-cursor = conn.execute('select * from COMPANY')
-"""
+cursor = conn.execute('select * from '+tables)
 names = list(map(lambda x: x[0], cursor.description))
-print(names)
+
 """
 names = [description[0] for description in cursor.description]
+"""
 
+
+ID = names[0]
+
+cursorCOM= ("SELECT MAX(" +ID+ ") FROM " +tables+ ";")
+cursor.execute(cursorCOM)
+minID = cursor.fetchall()
+minID = minID[0]
+res = int(''.join(map(str, minID)))
+minID = res + 1
 
 names = listToString(names)
 names = names.replace(" ", ",")
 
 for line in file:
+    minString = str(minID)
     line = line.rstrip('\n')
-    minID1 = str(minID)
     executeMessage = "INSERT INTO " + tables + " (" + names + ") \
-VALUES ("+ minID1 + "," + line + ")"
+VALUES ("+ minString +", " + line + ")"
     minID += 1
     conn.execute(executeMessage);
     conn.commit()
     
-
-
-cursor = conn.execute("SELECT ID,NAME,ADDRESS,SALARY from COMPANY")
-for row in cursor:
-    print("ID = ", row[0])
-    print("NAME = ", row[1])
-    print("ADDRESS = ", row[2])
-    print("SALARY = ", row[3])
-
-
 print("operation complete!");
+
 conn.close()
