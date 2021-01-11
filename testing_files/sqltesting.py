@@ -46,7 +46,6 @@ else:
     tables = tables[choice]
     
 file = open('values.txt', 'r')
-count = 0
 
 cursor = conn.execute('select * from COMPANY')
 """
@@ -60,7 +59,6 @@ names = listToString(names)
 names = names.replace(" ", ",")
 
 for line in file:
-    count += 1
     line = line.rstrip('\n')
     minID1 = str(minID)
     executeMessage = "INSERT INTO " + tables + " (" + names + ") \
