@@ -130,6 +130,6 @@ if sys.argv[1] != "-h":
             print("No filetype arguments provided!")
 
     else:
-        print("Invalid input. must be in form: python SYScat.py (file flag) (action flag) (files)")
+        print("Invalid input. must be in form: python SYStool.py (file flag) (action flag) (files)")
 else:
     help()
