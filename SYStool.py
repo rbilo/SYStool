@@ -2,14 +2,19 @@
 goals for this program:
 - can edit txts
 - can combine multiple txts into one txt (done!)
-- can txt to sql
-- can sql to txt
+- can txt to db
+- can db to txt
 - recognise which task is being performed via the flag in command line (done!)
+- db to spreadsheet
+- txt to spreadsheet
 - can do all this via command line, not using argparse
 """
 import sys
 """
 current task:
+txt to db. (adding contents of a txt to a pre-existing db has already been done in testing environment, implimenting into the tool itself currently)
+db to txt
+edit txts
 """
 
 typeList = ['-txt']     # -txt prepares program to work with txts, -db for databases
@@ -34,9 +39,8 @@ def txtWorker(fileList):
     """
     this function serves to ensure all files provided are operable
     """
-    index = 0           #iterates through all availible files
-    badFileFlag = 0     #keeps track of the amount of bad/unaccessible files
-    faulty = []         #list for the faulty files
+    index = 0           #iteratable variable to loop through all availible files
+    badFileNo = 0     #keeps track of the amount of bad/unaccessible files
     print("ensuring files are operable...")
 
     for i in range(len(fileList)):
@@ -53,17 +57,10 @@ def txtWorker(fileList):
 
         except IOError:
             print("File:", file, "not accessible. Ensure filenames are correct and/or file is in directory")
-            badFileFlag += 1
-            faulty.append(file)
+            badFileNo += 1
             index += 1;
 
-
-    tempFaulty = faulty
-    faulty.clear()
-    faulty.append(badFileFlag)
-    faulty.append(tempFaulty)
-
-    return(faulty)
+    return(badFileNo)
 
 def fileNameGen(name, end):
 
@@ -110,12 +107,11 @@ def txtOperation(fileList, command):
 
 def txtGO(faulty, fileList):
 
-    if faulty[0] == 0:
+    if faulty == 0:
         print("no files faulty or unavailible.")
 
     else:
-        num = faulty[0]
-        print("you have:", num,"faulty file(s). please check these and restart program")
+        print("you have:", faulty,"faulty file(s). please check these and restart program")
 
 fileList = []
 if sys.argv[1] != "-h":
@@ -125,7 +121,7 @@ if sys.argv[1] != "-h":
             fileType = sys.argv[1]
             fileList = sys.argv[3:]     #creates new list of filenames only
             if sys.argv[2] in flagList:
-                faulty = txtWorker(fileList)         #runs functio nwhich validates the files (runs by default independent of flags
+                faulty = txtWorker(fileList)         #runs function which validates the files (runs by default independent of flags
                 txtGO(faulty, fileList)
                 txtOperation(fileList, sys.argv[2])
             else:
