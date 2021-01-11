@@ -28,7 +28,7 @@ Help for SYStool.py:
 all commands must be formatted in form: python SYStool.py -fileExtension -actionflag file.fileExtension
 example: python SYStool.py -txt -c file.txt file1.txt
 supported file extension flags: -txt, -db
-supported action flags: -c, -v, -a, -d, -n
+supported action flags: -c, -v, -a, 
 
 -c: combines two files together into one, inherits file extension from flag
 
@@ -38,7 +38,7 @@ supported action flags: -c, -v, -a, -d, -n
 
 warning: all txts must be formatted in a specific manner, see the README on github.com/rbilo/SYStool
 """
-    #commented out functions which are in development
+    #commented out functions which are in development -d, -n
 """
 -d: creates a copy of a pre-existing file, with fileName "originalFileCopyx.filext". x is an integer which counts up from 0
 
