@@ -2,7 +2,8 @@
 Command line python script which allows for some basic txt and sql operations, without using argparse for arguments.
 
 !!!IMPORTANT!!!
-TESTING FILES IN THE TESTING FOLDER ARE ROUGH AND UNFINISHED. I DO NOT RECCOMEND USING THEM FOR SENSETIVE TASKS
+TESTING FILES IN THE TESTING FOLDER ARE ROUGH AND UNFINISHED. I DO NOT RECCOMEND USING THEM FOR SENSETIVE TASKS.
+
 TXTS USED IN CONJUNCTION WITH DBS HAVE TO BE FORMATTED VERY SPECIFICALLY IN ORDER TO PREVENT DATA LOSS (format guide below)
 
 The purpose of this project was to write a small command line tool which can combine txts, manipulate dbs and convert the SQL data to txt and vice versa.
