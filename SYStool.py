@@ -34,6 +34,8 @@ supported action flags: -c, -v, -a, -d, -n
 -v: validates that all provided files are accessible, as long as they have the same file extension as the first flag
 
 -a: adds entries from txts into one pre-existing database
+
+for more, go to the README: github.com/rbilo/SYStool
 """
     print(message)
    
