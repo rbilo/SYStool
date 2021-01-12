@@ -22,8 +22,7 @@ flagList = ['-c', '-v', '-a'] # -c combines files, -v will validate files, -a ad
 # -d duplicates a file
 # -n creates a new db from a txt file
 def help():
-    message = """
-Help for SYStool.py:
+    message = """Help for SYStool.py:
 
 all commands must be formatted in form: python SYStool.py -fileExtension -actionflag file.fileExtension
 example: python SYStool.py -txt -c file.txt file1.txt
