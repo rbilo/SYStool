@@ -19,6 +19,7 @@ The currently supported file types are txt and db, triggered with -txt and -db i
 -txt and -db will mean different things for different functions, read below
 
 The currently supported operation arguments are "-c", "-v", and "-a". 
+
 -c stands for "combine", and will combine any txts after it into one txt, which will be called "combinedx.txt" the x is an integer, from 0 to infinity.
 The value of x depends on whether or not you already have a file called combinedx.txt in the folder your cmd is targeting. 
 To put it shortly, the value of x counts up from zero until it finds a non-taken file name, so as to ensure it does not overwrite a pre-existing file.
