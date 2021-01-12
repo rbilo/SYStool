@@ -27,23 +27,16 @@ def help():
 all commands must be formatted in form: python SYStool.py -fileExtension -actionflag file.fileExtension
 example: python SYStool.py -txt -c file.txt file1.txt
 supported file extension flags: -txt, -db
-supported action flags: -c, -v, -a, 
+supported action flags: -c, -v, -a, -d, -n
 
 -c: combines two files together into one, inherits file extension from flag
 
 -v: validates that all provided files are accessible, as long as they have the same file extension as the first flag
 
 -a: adds entries from txts into one pre-existing database
-
-warning: all txts must be formatted in a specific manner, see the README on github.com/rbilo/SYStool
-"""
-    #commented out functions which are in development -d, -n
-"""
--d: creates a copy of a pre-existing file, with fileName "originalFileCopyx.filext". x is an integer which counts up from 0
-
--n: creates a new database from the contents of a pre-existing txt
 """
     print(message)
+   
 
 def listToString(list):
     str1 = " "
