@@ -1,3 +1,10 @@
+###
+### Author: Ruslan Bilotkach (github user @rbilo)
+### For: self use
+### Originally published: github.com/rbilo/SYStool
+### Description: command line python script for editing txts and dbs
+###
+
 """
 goals for this program:
 - can edit txts
